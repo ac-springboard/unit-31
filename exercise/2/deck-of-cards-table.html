@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Deck of Cards</title>
+		<style type="text/css" rel="stylesheet">
+			html, body {
+				width            : 100%;
+				background-color : #888888;
+				}
+
+			.pile {
+				height     : 15vw !important;
+				transform  : rotate(0deg) !important;
+				display    : inline-block;
+				margin     : 1vw;
+				min-height : 8vw;
+				}
+
+			#main {
+				background-color : #dddddd;
+				width            : 80%;
+				margin           : 0 auto;
+				text-align       : center;
+				}
+
+			#next-card-same-deck {
+				background-color : #228822;
+				width            : 100%;
+				text-align       : center;
+				min-height       : 10rem;
+				}
+
+			#table-top {
+				width            : 100%;
+				background-color : #003300;
+				position         : relative;
+				top              : 0;
+
+				}
+
+			#get-card {
+				height           : 2rem;
+				width            : 15rem;
+				text-align       : center;
+				font-size        : 1.5rem;
+				border-radius    : 0.5rem;
+				background-color : #ff000080;
+				color            : #ffffff;
+				}
+
+			#get-card:hover {
+				background-color : #ff0000;
+				cursor           : pointer;
+				}
+
+			#get-card:disabled {
+				background-color : #888888;
+				cursor           : not-allowed;
+				}
+
+			#table-cards {
+				text-align : left !important;
+				}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+						integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+						crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="next-card-same-deck">
+				<div id="table-top">
+					<button id="get-card"># remaining</button>
+				</div>
+				<div id="table-cards"></div>
+			</div>
+		</div>
+		<script src="deck-of-cards-table.js"></script>
+	</body>
+</html>

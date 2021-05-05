@@ -15,7 +15,6 @@ class DeckOfCards {
     this.updateButtonText();
   }
 
-
   getOneCard = () => {
     return axios({
       method: 'get',
@@ -35,7 +34,7 @@ class DeckOfCards {
              this.remaining = response.data.remaining;
              this.updateButtonText();
            })
-           .then(() => this.getCard.disable = false )
+           .then(() => this.getCard.disable = false)
            .catch((error) => console.log('ERROR >> ', error));
 
   }
@@ -56,7 +55,7 @@ class DeckOfCards {
   updateButtonText() {
     const gc     = document.querySelector('#get-card');
     gc.innerText = `${this.remaining} remaining`;
-    if ( this.remaining === 0 ){
+    if (this.remaining === 0) {
       this.getCard.disabled = true;
     }
   }
@@ -64,13 +63,11 @@ class DeckOfCards {
 
 // ANSWER 3
 //
+
 axios.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
-     .then(() => {
-       axios.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
-            .then(response => {
-              let base_url = `https://deckofcardsapi.com/api/deck/${response.data.deck_id}`;
-              new DeckOfCards(base_url, response.data.remaining);
-            });
+     .then(response => {
+       let base_url = `https://deckofcardsapi.com/api/deck/${response.data.deck_id}`;
+       new DeckOfCards(base_url, response.data.remaining);
      });
 
 
